@@ -1,0 +1,59 @@
+name: Flutter CI
+
+on:
+  push:
+    branches: [production]
+  pull_request:
+    branches: [production]
+
+jobs:
+  build:
+    name: Analyze, Test, and Build
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Setup Flutter (fixes version/channel detection issue)
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "stable"
+          channel: "stable"
+          cache: true
+
+      # Step 3: Verify Flutter
+      - name: Flutter Doctor
+        run: flutter doctor -v
+
+      # Step 4: Install dependencies
+      - name: Install dependencies
+        run: flutter pub get
+
+      # Step 5: Analyze
+      - name: Analyze code
+        run: flutter analyze
+
+      # Step 6: Run tests with coverage
+      - name: Run tests with coverage
+        run: flutter test --coverage
+
+      # Step 7: Upload coverage artifact (optional)
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage/lcov.info
+
+      # Step 8: Build release APK
+      - name: Build release APK
+        run: flutter build apk --release
+
+      # Step 9: Upload built APK (optional)
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-release-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
