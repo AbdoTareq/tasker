@@ -2,6 +2,10 @@
 
 ## Getting Started
 
+## start json-server
+npm i -g json-server
+json-server --watch seed.json --port 3000
+
 translation:
 dart run slang
 
