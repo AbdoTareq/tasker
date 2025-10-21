@@ -1,0 +1,17 @@
+{
+    "@@locale": "en",
+    "appTitle": "Tasks & Reminders",
+    "noTasks": "No tasks",
+    "addTask": "Add Task",
+    "editTask": "Edit Task",
+    "titleLabel": "Title",
+    "notesLabel": "Notes",
+    "dueLabel": "Due",
+    "save": "Save",
+    "settings": "Settings",
+    "language": "Language",
+    "theme": "Theme",
+    "clearCache": "Clear Cache",
+    "syncing": "Syncing...",
+    "retry": "Retry"
+}

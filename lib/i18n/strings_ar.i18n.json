@@ -1,0 +1,17 @@
+{
+    "@@locale": "ar",
+    "appTitle": "المهام والتذكيرات",
+    "noTasks": "لا توجد مهام",
+    "addTask": "إضافة مهمة",
+    "editTask": "تعديل المهمة",
+    "titleLabel": "العنوان",
+    "notesLabel": "ملاحظات",
+    "dueLabel": "تاريخ الاستحقاق",
+    "save": "حفظ",
+    "settings": "الإعدادات",
+    "language": "اللغة",
+    "theme": "المظهر",
+    "clearCache": "مسح التخزين",
+    "syncing": "مزامنة...",
+    "retry": "إعادة المحاولة"
+}
